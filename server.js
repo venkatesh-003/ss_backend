@@ -45,7 +45,7 @@ try{
     const newUser = new User({username,email,password:hashedPassword});
     await newUser.save();
 
-    // users.push({ username, email, password: hashedPassword });
+    
 
     const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
     res.json({ message: "User registered successfully!", token });
